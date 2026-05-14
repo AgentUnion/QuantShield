@@ -1,0 +1,33 @@
+# QuantShield 配置模板
+# 复制此文件为 config.yaml，填入真实值，切勿提交到 Git
+
+# 数据源
+data_sources:
+  tushare_token: "YOUR_TUSHARE_TOKEN"
+  akshare_timeout: 30
+
+# LLM
+llm:
+  provider: "openai"          # openai | anthropic | local
+  openai_api_key: "YOUR_OPENAI_API_KEY"
+  anthropic_api_key: "YOUR_ANTHROPIC_API_KEY"
+  model: "gpt-4o"
+  max_tokens: 4096
+
+# 数据库
+database:
+  postgres_url: "postgresql://user:pass@localhost:5432/quantshield"
+  clickhouse_url: "clickhouse://localhost:9000/quantshield"
+  redis_url: "redis://localhost:6379/0"
+
+# 视频合成
+video:
+  fish_audio_api_key: "YOUR_FISH_AUDIO_KEY"
+  output_dir: "video/output"
+  fps: 30
+  resolution: "1080x1920"     # 抖音竖屏
+
+# 发布
+publish:
+  douyin_cookies_path: "config/douyin_cookies.json"
+  schedule_time: "18:00"      # 每日定时发布时间
